@@ -1,0 +1,12 @@
+import torch
+
+tensor = torch.randint(0, 10, (2, 2, 1, 2)).to(torch.float32)
+print(tensor)
+print(tensor.shape)
+
+squared_tensor = tensor ** 2
+sum_of_squares = torch.sum(squared_tensor, dim=(2, 3))
+print(sum_of_squares)
+normed_tensor = tensor / torch.sqrt(sum_of_squares).unsqueeze(-1).unsqueeze(-1)
+print(normed_tensor)
+print(normed_tensor**2)
