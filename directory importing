@@ -1,0 +1,9 @@
+"""
+When you want to import objects in the subling dir of the father dir. 
+"""
+
+try:
+    sys.path.append("..")
+    import data.util as util
+except ImportError:
+    pass
